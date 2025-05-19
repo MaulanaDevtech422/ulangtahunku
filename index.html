@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 
+  Website ini dibuat oleh: Ikrom Maulana
+  Instagram: @maulana_422
+  Email: xrommaulan@gmail.com
+  Brand: MaulanaTech
+  Tahun: 2025
+  Deskripsi: Dibuat dengan penuh semangat oleh web developer kreatif asal Indonesia.
+-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ikrom Maulana - MaulanaTech">
+  <meta name="copyright" content="&copy; 2025 Ikrom Maulana - MaulanaTech. All rights reserved.">
+  <meta name="instagram" content="https://www.instagram.com/maulana_422">
+  <meta name="email" content="xrommaulan@gmail.com">
+  <link rel="icon" href="favicon.png" type="image/png">
+<title>Form Ulang Tahun - Halaman 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  /* Reset dan dasar */
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f7f4;
+  overflow-x: hidden;
+  position: relative;
+
+  display: flex;
+  justify-content: center;  /* Tengah horizontal */
+  align-items: center;      /* Tengah vertikal */
+}
+
+  /* Animasi balon, kue, huruf */
+  .balloon, .cake, .letter {
+    position: absolute;
+    bottom: -100px;
+    opacity: 0.8;
+    user-select: none;
+    animation: floatUp 8s ease-in-out infinite;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.12));
+  }
+  /* Variasi warna balon */
+  .balloon {
+    width: 40px; height: 60px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  .balloon:nth-child(1) {
+    background: radial-gradient(circle at 30% 30%, #ff7f7f, #c0392b);
+    left: 5%;
+    animation-delay: 0s;
+  }
+  .balloon:nth-child(2) {
+    background: radial-gradient(circle at 30% 30%, #ffd27f, #f39c12);
+    left: 30%;
+    animation-delay: 2s;
+  }
+  .balloon:nth-child(3) {
+    background: radial-gradient(circle at 30% 30%, #6cc1ff, #0984e3);
+    left: 55%;
+    animation-delay: 4s;
+  }
+  .balloon:nth-child(4) {
+    background: radial-gradient(circle at 30% 30%, #7fffaa, #00b894);
+    left: 80%;
+    animation-delay: 1.5s;
+  }
+
+  /* Kue */
+  .cake {
+    width: 35px;
+    height: 45px;
+    background: linear-gradient(180deg, #fceabb, #f8b500);
+    border-radius: 10px 10px 3px 3px;
+    box-shadow: inset 0 4px 4px #f6c72b;
+  }
+  .cake:nth-child(5) { left: 15%; animation-delay: 1s; }
+  .cake:nth-child(6) { left: 45%; animation-delay: 3s; }
+  .cake:nth-child(7) { left: 75%; animation-delay: 5s; }
+
+  /* Huruf */
+  .letter {
+    font-weight: 900;
+    font-size: 3rem;
+    color: #c19e68;
+    text-shadow: 1px 1px 3px #baa85a;
+    user-select: none;
+  }
+  .letter:nth-child(8) {
+    left: 10%;
+    bottom: -130px;
+    animation-delay: 0.8s;
+  }
+  .letter:nth-child(9) {
+    left: 40%;
+    bottom: -140px;
+    animation-delay: 3.1s;
+  }
+  .letter:nth-child(10) {
+    left: 70%;
+    bottom: -135px;
+    animation-delay: 5.6s;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-280px) scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+  }
+
+  /* Container form */
+  .container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 25px 30px;
+    background: #fffaf0;
+    border-radius: 15px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.18);
+    position: relative;
+    z-index: 10;
+  }
+
+  .container h1 {
+    text-align: center;
+    color: #7d6742;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #6a563a;
+    font-weight: 600;
+  }
+
+  form input, form select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border: 2px solid #c9b68b;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4e3b1a;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+    background-color: #fbf7ed;
+  }
+  form input:focus, form select:focus {
+    border-color: #7d6742;
+    background-color: #fff;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #a1884f;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #7d6742;
+  }
+
+  /* Responsive */
+  @media(max-width: 480px){
+    .container {
+      margin: 30px 15px;
+      padding: 20px 25px;
+    }
+    .container h1 {
+      font-size: 1.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Animasi ulang tahun -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+  <div class="letter">H</div>
+  <div class="letter">A</div>
+  <div class="letter">P</div>
+
+  <div class="container">
+    <h1>Masukkan Tentang kamu</h1>
+    <form id="formHal1" action="halaman2.html" method="GET">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap" />
+
+      <label for="umur">Usia:</label>
+      <input type="number" id="umur" name="umur" min="1" max="120" required placeholder="Masukkan usia" />
+
+      <label for="gender">Jenis Kelamin:</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Pilih jenis kelamin</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+
+      <button type="submit">Lanjut </button>
+    </form>
+  </div>
+
+</body>
+</html>

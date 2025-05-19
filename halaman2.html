@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 
+  Website ini dibuat oleh: Ikrom Maulana
+  Instagram: @maulana_422
+  Email: xrommaulan@gmail.com
+  Brand: MaulanaTech
+  Tahun: 2025
+  Deskripsi: Dibuat dengan penuh semangat oleh web developer kreatif asal Indonesia.
+-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ikrom Maulana - MaulanaTech">
+  <meta name="copyright" content="&copy; 2025 Ikrom Maulana - MaulanaTech. All rights reserved.">
+  <meta name="instagram" content="https://www.instagram.com/maulana_422">
+  <meta name="email" content="xrommaulan@gmail.com">
+  <link rel="icon" href="favicon.png" type="image/png">
+<title>Form Jajan - Halaman 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f7f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 450px;
+    background: #fffaf0;
+    padding: 30px 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    position: relative;
+  }
+
+  h1 {
+    text-align: center;
+    color: #7d6742;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #6a563a;
+    font-weight: 600;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #c9b68b;
+    border-radius: 10px;
+    background: #fbf7ed;
+    color: #4e3b1a;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    outline: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #7d6742;
+    background: #fff;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #a1884f;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background: #7d6742;
+  }
+
+  /* Elemen dekorasi */
+  .balloon, .cake, .letter {
+    position: absolute;
+    bottom: -100px;
+    opacity: 0.8;
+    animation: floatUp 8s ease-in-out infinite;
+    user-select: none;
+    z-index: 1;
+  }
+
+  .balloon {
+    width: 40px;
+    height: 60px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+
+  .balloon:nth-child(1) { background: radial-gradient(circle at 30% 30%, #ff7f7f, #c0392b); left: 5%; animation-delay: 0s; }
+  .balloon:nth-child(2) { background: radial-gradient(circle at 30% 30%, #ffd27f, #f39c12); left: 30%; animation-delay: 2s; }
+  .balloon:nth-child(3) { background: radial-gradient(circle at 30% 30%, #6cc1ff, #0984e3); left: 55%; animation-delay: 4s; }
+  .balloon:nth-child(4) { background: radial-gradient(circle at 30% 30%, #7fffaa, #00b894); left: 80%; animation-delay: 1.5s; }
+
+  .cake {
+    width: 35px;
+    height: 45px;
+    background: linear-gradient(180deg, #fceabb, #f8b500);
+    border-radius: 10px 10px 3px 3px;
+  }
+
+  .cake:nth-child(5) { left: 15%; animation-delay: 1s; }
+  .cake:nth-child(6) { left: 45%; animation-delay: 3s; }
+  .cake:nth-child(7) { left: 75%; animation-delay: 5s; }
+
+  .letter {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #c19e68;
+    text-shadow: 1px 1px 3px #baa85a;
+  }
+
+  .letter:nth-child(8) { left: 10%; bottom: -130px; animation-delay: 0.8s; }
+  .letter:nth-child(9) { left: 40%; bottom: -140px; animation-delay: 3.1s; }
+  .letter:nth-child(10) { left: 70%; bottom: -135px; animation-delay: 5.6s; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-280px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.8; }
+  }
+
+  @media (max-width: 500px) {
+    .container {
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Dekorasi animasi -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+  <div class="letter">J</div>
+  <div class="letter">A</div>
+  <div class="letter">J</div>
+
+  <!-- Form utama -->
+  <div class="container">
+    <h1>Suka Jajan Apa?</h1>
+    <form id="formHal2" action="halaman3.html" method="GET">
+      <!-- Hidden untuk data dari halaman 1 -->
+      <input type="hidden" name="nama" id="namaInput" />
+      <input type="hidden" name="umur" id="umurInput" />
+      <input type="hidden" name="gender" id="genderInput" />
+
+      <label for="jajan">Jajanan Favorit:</label>
+      <input type="text" id="jajan" name="jajan" placeholder="Misal: Es krim, gorengan..." required />
+
+      <label for="minuman">Minuman Favorit:</label>
+      <input type="text" id="minuman" name="minuman" placeholder="Misal: Teh tarik, bubble tea..." />
+
+      <label for="tempat">Tempat Jajan Favorit:</label>
+      <input type="text" id="tempat" name="tempat" placeholder="Misal: Kantin sekolah, depan rumah..." />
+
+      <label for="dengan">Jajan Biasanya Dengan Siapa?</label>
+      <select id="dengan" name="dengan">
+        <option value="" disabled selected>Pilih salah satu</option>
+        <option value="Sendiri">Sendiri</option>
+        <option value="bareng Teman">Teman</option>
+        <option value="bareng Keluarga">Keluarga</option>
+      </select>
+
+      <label for="alasan">Alasan Suka Jajanan Tersebut:</label>
+      <textarea id="alasan" name="alasan" rows="3" placeholder="Karena enak, murah, kenangan masa kecil, dll..."></textarea>
+
+      <button type="submit">Lanjut lagi</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('namaInput').value = params.get('nama') || '';
+    document.getElementById('umurInput').value = params.get('umur') || '';
+    document.getElementById('genderInput').value = params.get('gender') || '';
+  </script>
+
+</body>
+</html>

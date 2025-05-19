@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- 
+  Website ini dibuat oleh: Ikrom Maulana
+  Instagram: @maulana_422
+  Email: xrommaulan@gmail.com
+  Brand: MaulanaTech
+  Tahun: 2025
+  Deskripsi: Dibuat dengan penuh semangat oleh web developer kreatif asal Indonesia.
+-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ikrom Maulana - MaulanaTech">
+  <meta name="copyright" content="&copy; 2025 Ikrom Maulana - MaulanaTech. All rights reserved.">
+  <meta name="instagram" content="https://www.instagram.com/maulana_422">
+  <meta name="email" content="xrommaulan@gmail.com">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>MaulanaTech</title>
+  <title>Kartu Ucapan Ulang Tahun</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    /* Animasi background gradient */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header judul */
+    .judul-utama {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 3.5rem;
+      color: #ff69b4;
+      text-shadow: 3px 3px 0 #fff, 
+                  -1px -1px 0 #fff, 
+                  1px -1px 0 #fff, 
+                  -1px 1px 0 #fff;
+      letter-spacing: 4px;
+      margin: 0;
+      animation: judul-masuk 1s ease-out;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      z-index: 100;
+    }
+
+    @keyframes judul-masuk {
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Animasi confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ff69b4;
+      animation: confettiFall 3s linear infinite;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    @keyframes confettiFall {
+      0% { 
+        transform: translateY(-100vh) rotate(0deg); 
+        opacity: 1;
+      }
+      100% { 
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Balon */
+    .balloon, .cake {
+      position: absolute;
+      bottom: -120px;
+      width: 50px;
+      height: 70px;
+      opacity: 0.85;
+      animation: floatUp 8s infinite ease-in-out;
+      user-select: none;
+    }
+    .balloon {
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ff7675, #d63031);
+    }
+    .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 30%; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, #ffeaa7, #f39c12); }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, #74b9ff, #0984e3); }
+    .balloon:nth-child(4) { left: 70%; animation-delay: 6s; background: radial-gradient(circle at 30% 30%, #00cec9, #006266); }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 8s; background: radial-gradient(circle at 30% 30%, #a29bfe, #6c5ce7); }
+    .cake {
+      width: 40px;
+      height: 50px;
+      background: linear-gradient(180deg, #fceabb, #f8b500);
+      border-radius: 10px 10px 3px 3px;
+      animation: floatUp 10s infinite ease-in-out;
+    }
+    .cake:nth-child(6) { left: 20%; animation-delay: 1s; }
+    .cake:nth-child(7) { left: 50%; animation-delay: 4s; }
+    .cake:nth-child(8) { left: 80%; animation-delay: 7s; }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.85; }
+      50% { transform: translateY(-260px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.85; }
+    }
+
+    /* Kembang api */
+    .firework {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      animation: explode 1.2s ease-out forwards;
+      pointer-events: none;
+    }
+    @keyframes explode {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(4); opacity: 0; }
+    }
+
+    /* Amplop */
+    #envelope {
+      width: 440px;
+      height: 340px;
+      background: linear-gradient(145deg, #fdf8f1, #f3e9d4);
+      border: 3px solid #bfa981;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.2);
+      z-index: 10;
+      margin-top: 80px;
+    }
+    #envelope::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+      border-radius: 0 0 15px 15px;
+    }
+    #envelope::before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 2px;
+      background: repeating-linear-gradient(
+        90deg,
+        #d4b483,
+        #d4b483 10px,
+        transparent 10px,
+        transparent 20px
+      );
+      top: 20px;
+      left: 5%;
+      opacity: 0.5;
+    }
+
+    #flap {
+      width: 0;
+      height: 0;
+      border-left: 220px solid transparent;
+      border-right: 220px solid transparent;
+      border-bottom: 140px solid #c7b79c;
+      position: absolute;
+      top: -140px;
+      left: 0;
+      border-radius: 10px;
+      box-shadow: inset 0 6px 7px rgba(0,0,0,0.18);
+      transition: all 0.6s ease;
+      z-index: 20;
+    }
+    #card {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      width: 390px;
+      height: 280px;
+      background: #fffaf0;
+      border-radius: 15px;
+      padding: 30px 35px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+      opacity: 0;
+      transform: translateY(50px);
+      pointer-events: none;
+      transition: all 0.8s ease;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #6a4c3b;
+      font-weight: 600;
+      overflow-y: auto;
+    }
+    #envelope.open #flap {
+      transform: translateY(-140px) rotateX(180deg);
+      opacity: 0;
+    }
+    #envelope.open #card {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    #klik-petunjuk {
+      position: absolute;
+      bottom: -58px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.15rem;
+      color: #6d4e2e;
+      font-weight: 600;
+      animation: pulse 1.5s infinite;
+      user-select: none;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.07); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="judul-utama">SELAMAT ULANG TAHUN</h1>
+
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+  <div class="cake"></div>
+
+  <div id="envelope" title="Klik amplop untuk membuka kartu ucapan">
+    <div id="flap"></div>
+    <div id="card">
+      <p id="ucapan-text"></p>
+    </div>
+    <div id="klik-petunjuk">Klik amplop, scroll jangan pake jempol ya pake jari</div>
+  </div>
+
+  <audio id="birthday-music" src="ultah.mp3" preload="auto"></audio>
+
+  <script>
+    // Animasi confetti
+    function createConfetti() {
+      for(let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 65%)`;
+        confetti.style.width = Math.random() * 8 + 4 + 'px';
+        confetti.style.height = confetti.style.width;
+        document.body.appendChild(confetti);
+      }
+    }
+    createConfetti();
+
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get('nama') || 'Teman';
+    const umur = params.get('umur') || '?';
+    const gender = params.get('gender') || '';
+    const jajan = params.get('jajan') || 'jajanan favorit';
+    const tempat = params.get('tempat') || '?';
+    const minuman = params.get('minuman') || '';
+    const dengan = params.get('dengan') || '?';
+    const sendiri = params.get('sendiri') || '?';
+    const teman = params.get('teman') || '?';
+    const keluarga = params.get('keluarga') || '?';
+    
+
+    const ucapan = `
+      Hallo <strong><span style="color:red">${nama}</span></strong> yang luar biasa!<br>
+      Di usia <strong><span style="color:red">${umur}</span></strong> tahun ini, semoga kamu selalu sehat, bahagia, dan yang di cita2kan semuanya tercapai, kalo bisa jangan lupa traktiranya yahhh, Ehh BTW ternyata kamu suka jajan <em><span style="color:red">${jajan}</span></em> tiap sore, ya!<br><br>
+      kamu juga suka minuman <em><span style="color:red">${minuman}</span></em>, ternyata tempat favorit makan kamu di<em><span style="color:red">${tempat}</span></em> dan lebih suka pergi  <em><span style="color:red">${dengan}<span style="color:red"></em>, sebelumnyaohon maaf karena tidak bisa beri kado cuman ini yang bisa saya beri,
+      Walaupun aku gak bisa ngasih kado, tapi doa dan harapan terbaikku selalu menyertai langkahmu.<br>
+      Semoga hidupmu dipenuhi tawa, keberkahan, dan kejutan manis layaknya kue ulang tahun.<br><br>
+      Selamat ulang tahun, semoga semua impianmu terwujud dan hati selalu penuh cinta! 
+    `;
+    document.getElementById('ucapan-text').innerHTML = ucapan;
+
+    const envelope = document.getElementById('envelope');
+    const music = document.getElementById('birthday-music');
+
+    envelope.addEventListener('click', () => {
+      if (!envelope.classList.contains('open')) {
+        envelope.classList.add('open');
+        music.currentTime = 0;
+        music.play();
+        showFireworks();
+      }
+    });
+
+    function showFireworks() {
+      for (let i = 0; i < 20; i++) {
+        const fw = document.createElement('div');
+        fw.className = 'firework';
+        fw.style.left = `${Math.random() * 100}%`;
+        fw.style.top = `${Math.random() * 60 + 10}%`;
+        fw.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 65%)`;
+        document.body.appendChild(fw);
+        setTimeout(() => fw.remove(), 1200);
+      }
+    }
+  </script>
+</body>
+</html>
